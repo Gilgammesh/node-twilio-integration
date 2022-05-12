@@ -21,7 +21,7 @@ Create a .env file in functions/ directory
 📦project  
 ┣ 📂src  
 ┃ ┗ 📜index.ts  
-┣ 📜**_.env_**  
+┣ 📜<b>.env</b>  
 ┗ 📜nodemon.json  
 ┗ 📜package.json  
 
