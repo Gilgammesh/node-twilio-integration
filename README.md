@@ -1,6 +1,6 @@
 # TWILIO API
 
-Firebase functions of the Super project
+Integration Twilio and Nodejs
 
 ## HOW TO RUN THE PROJECT
 
