@@ -29,5 +29,5 @@ app.post(`${basePath}/parseSms`, sms.parse);
 
 // Initialize app server
 http.createServer(app).listen(appPort, () => {
-  console.log('Server running, ready to work!!');
+  console.log(`Server running on port ${appPort}, ready to work!!`);
 });
