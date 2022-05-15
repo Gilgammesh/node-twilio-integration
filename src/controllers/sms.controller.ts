@@ -27,10 +27,11 @@ export const parse: Handler = async (req, res) => {
       const result = await axios(req.body.MediaUrl0);
       console.log('result =>', result);
 
-      let headerLine = result.headers['content-disposition'];
-      let startIdx = headerLine.indexOf('"') + 1;
-      let endIdx = headerLine.lastIndexOf('"');
-      const fileName = headerLine.substring(startIdx, endIdx);
+      const etag = result.headers['etag'].replace(/"/g, '');
+      const headerLine = result.headers['content-disposition'];
+      const contentParts = headerLine.split('.');
+      const ext = contentParts[contentParts.length - 1].replace(/"/g, '');
+      const fileName = `${etag}.${ext}`;
       console.log('fileName =>', fileName);
 
       const fileMimeType = result.headers['content-type'];
